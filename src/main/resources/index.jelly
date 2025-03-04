@@ -1,0 +1,4 @@
+<?jelly escape-by-default='true'?>
+<div>
+    This plugin provides the <a href="https://github.com/oras-project/oras-java">ORAS Java</a> SDK (v${revision}) for other plugins.
+</div>
