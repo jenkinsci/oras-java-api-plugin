@@ -56,7 +56,8 @@ public class SmokeTest {
 
         // Test
         List<String> tags = registry.getTags(ContainerRef.parse("%s/library/artifact-text"
-                .formatted(wmRuntimeInfo.getHttpBaseUrl().replace("http://", ""))));
+                        .formatted(wmRuntimeInfo.getHttpBaseUrl().replace("http://", ""))))
+                .tags();
 
         // Assert
         assertEquals(2, tags.size());
