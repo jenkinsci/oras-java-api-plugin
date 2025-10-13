@@ -30,7 +30,7 @@
   </scm>
 
   <properties>
-    <revision>0.2.16</revision>
+    <revision>0.3.0</revision>
     <changelist>999999-SNAPSHOT</changelist>
     <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
     <jenkins.baseline>2.504</jenkins.baseline>
@@ -61,7 +61,7 @@
     </dependency>
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
-      <artifactId>gson-api</artifactId>
+      <artifactId>jackson3-api</artifactId>
     </dependency>
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
@@ -72,19 +72,15 @@
       <artifactId>oras-java-sdk</artifactId>
       <version>${revision}</version>
       <exclusions>
+        <!-- provided by jackson3 API plugin -->
+        <exclusion>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-annotations</artifactId>
+        </exclusion>
         <!-- provided by commons-compress API plugin -->
         <exclusion>
           <groupId>com.github.luben</groupId>
           <artifactId>zstd-jni</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>com.google.code.gson</groupId>
-          <artifactId>gson</artifactId>
-        </exclusion>
-        <!-- provided by gson API plugin -->
-        <exclusion>
-          <groupId>com.google.code.gson</groupId>
-          <artifactId>gson</artifactId>
         </exclusion>
         <!-- provided by commons-compress API plugin -->
         <exclusion>
@@ -105,6 +101,16 @@
         <exclusion>
           <groupId>org.slf4j</groupId>
           <artifactId>slf4j-api</artifactId>
+        </exclusion>
+        <!-- provided by jackson3 API plugin -->
+        <exclusion>
+          <groupId>tools.jackson.core</groupId>
+          <artifactId>jackson-core</artifactId>
+        </exclusion>
+        <!-- provided by jackson3 API plugin -->
+        <exclusion>
+          <groupId>tools.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
