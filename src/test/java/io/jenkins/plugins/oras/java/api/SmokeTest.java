@@ -73,6 +73,7 @@ public class SmokeTest {
         Files.writeString(tempDir.resolve("file2.txt"), "barfoo");
         LocalPath tar = ArchiveUtils.tar(LocalPath.of(tempDir));
         ArchiveUtils.compress(tar, Const.DEFAULT_BLOB_DIR_MEDIA_TYPE); // gzip
+        ArchiveUtils.compress(tar, Const.ZIP_MEDIA_TYPE); // zip
         ArchiveUtils.compress(tar, Const.BLOB_DIR_ZSTD_MEDIA_TYPE); // zstd
     }
 }
