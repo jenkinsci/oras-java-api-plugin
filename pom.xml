@@ -30,7 +30,7 @@
   </scm>
 
   <properties>
-    <revision>0.4.2</revision>
+    <revision>0.5.0</revision>
     <changelist>999999-SNAPSHOT</changelist>
     <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
     <jenkins.baseline>2.516</jenkins.baseline>
@@ -52,10 +52,20 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+      <!-- Until on bom -->
+      <dependency>
+        <groupId>io.jenkins.plugins</groupId>
+        <artifactId>micrometer-core-api</artifactId>
+        <version>1.16.4-4.vb_dfa_edea_107c</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <dependencies>
     <!-- Dependencies -->
+    <dependency>
+      <groupId>io.jenkins.plugins</groupId>
+      <artifactId>caffeine-api</artifactId>
+    </dependency>
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
       <artifactId>commons-compress-api</artifactId>
@@ -69,6 +79,10 @@
       <artifactId>jspecify-api</artifactId>
     </dependency>
     <dependency>
+      <groupId>io.jenkins.plugins</groupId>
+      <artifactId>micrometer-core-api</artifactId>
+    </dependency>
+    <dependency>
       <groupId>land.oras</groupId>
       <artifactId>oras-java-sdk</artifactId>
       <version>${revision}</version>
@@ -77,6 +91,11 @@
         <exclusion>
           <groupId>com.fasterxml.jackson.core</groupId>
           <artifactId>jackson-annotations</artifactId>
+        </exclusion>
+        <!-- provided by caffeine API plugin -->
+        <exclusion>
+          <groupId>com.github.ben-manes.caffeine</groupId>
+          <artifactId>caffeine</artifactId>
         </exclusion>
         <!-- provided by commons-compress API plugin -->
         <exclusion>
