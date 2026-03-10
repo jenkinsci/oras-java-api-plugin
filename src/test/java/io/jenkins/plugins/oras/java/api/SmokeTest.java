@@ -42,7 +42,7 @@ import org.junit.jupiter.api.parallel.ExecutionMode;
 
 @WireMockTest
 @Execution(ExecutionMode.CONCURRENT)
-public class SmokeTest {
+class SmokeTest {
     @Test
     void shouldListTags(WireMockRuntimeInfo wmRuntimeInfo) {
 
