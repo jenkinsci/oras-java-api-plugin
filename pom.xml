@@ -30,7 +30,7 @@
   </scm>
 
   <properties>
-    <revision>0.5.1</revision>
+    <revision>0.5.2</revision>
     <changelist>999999-SNAPSHOT</changelist>
     <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
     <jenkins.baseline>2.516</jenkins.baseline>
@@ -51,6 +51,12 @@
         <version>6098.v29a_dff8a_0c19</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <!-- Until on bom -->
+      <dependency>
+        <groupId>io.jenkins.plugins</groupId>
+        <artifactId>jackson3-api</artifactId>
+        <version>3.1.2-71.v0a_23916945fe</version>
       </dependency>
       <!-- Until on bom -->
       <dependency>
