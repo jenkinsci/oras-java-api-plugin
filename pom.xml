@@ -30,7 +30,7 @@
   </scm>
 
   <properties>
-    <revision>0.8.3</revision>
+    <revision>0.8.4</revision>
     <changelist>999999-SNAPSHOT</changelist>
     <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
     <jenkins.baseline>2.541</jenkins.baseline>
@@ -49,9 +49,14 @@
       <dependency>
         <groupId>io.jenkins.tools.bom</groupId>
         <artifactId>bom-${jenkins.baseline}.x</artifactId>
-        <version>6715.v52b_c00222d1e</version>
+        <version>6931.vea_a_b_c6fd017d</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.jenkins.plugins</groupId>
+        <artifactId>micrometer-core-api</artifactId>
+        <version>1.17.1-20.v6981459953d8</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
